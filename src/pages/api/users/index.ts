@@ -24,5 +24,11 @@ export default function findAllUsers(
       lastName: "Gates",
       fullName: "Bill Gates",
     },
+    {
+      id: 3,
+      firstName: "Moussa",
+      lastName: "Harajli",
+      fullName: "Moussa Harajli",
+    },
   ]);
 }

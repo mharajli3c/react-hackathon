@@ -5,7 +5,7 @@ const ChallengeOne = () => {
 
   return (
     <div>
-      <h1>Counter: {counter}</h1>
+      <p>Counter: {counter}</p>
     </div>
   );
 };
