@@ -1,12 +1,17 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const ChallengeSix = () => {
   const inputRef = useRef(null);
 
   // Utilize useEffect to auto focus the input element via the ref
+  useEffect(() => {
+    inputRef.current.focus()
+  }, [])
+  
 
   return (
-    <div className="m-2">
+    <div className="flex flex-col items-center m-2">
+      <h1 className="text-blue-700 font-semibold">Challenge 6</h1>
       <form>
         <p>
           {/* Utilize a ref on this input to auto focus on page load */}
@@ -15,6 +20,7 @@ const ChallengeSix = () => {
             type="text"
             name="search"
             placeholder="Search..."
+            ref={inputRef}
           />
         </p>
       </form>

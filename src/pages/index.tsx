@@ -6,6 +6,7 @@ import ChallengeThree from "../components/ChallengeThree";
 import ChallengeFour from "../components/ChallengeFour";
 import ChallengeFive from "../components/ChallengeFive";
 import ChallengeSix from "../components/ChallengeSix";
+import ChallengeTwoPointFive from "../components/ChallengeTwoPointFive";
 
 export default function Index() {
   return (
@@ -16,11 +17,12 @@ export default function Index() {
 
       {/* Comment out each challange as necessary */}
       <ChallengeOne />
-      {/* <ChallengeTwo /> */}
-      {/* <ChallengeThree /> */}
-      {/* <ChallengeFour /> */}
-      {/* <ChallengeFive /> */}
-      {/* <ChallengeSix /> */}
+      <ChallengeTwo />
+      <ChallengeTwoPointFive />
+      <ChallengeThree />
+      <ChallengeFour />
+      <ChallengeFive />
+      <ChallengeSix />
     </>
   );
 }

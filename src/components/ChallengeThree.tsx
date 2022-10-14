@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import debounce from "lodash/debounce";
 
 const SearchItems = [
@@ -33,16 +33,25 @@ const ChallengeThree = () => {
   // After you stop typing, the value of isDebounced should be set to false after 1 second.
 
   // MODIFY THIS: Focus on using useMemo or useCallback to utilize debounce.
+  const setToFalse = () => {
+    
+  }
+
   const handleSearchChange = (searchText: string) => {
     console.log(`Search value changed: ${searchText}`);
-
+    
     // Filter items based on search
     const filtered = SearchItems.filter(({ name }) => name.includes(searchText));
-    setFilteredItems(filtered);
+    setFilteredItems(filtered)
+    setIsDebounced(false)
   };
 
+  const debouncedChangeHandler = useCallback( debounce(handleSearchChange, 1000)
+  , []);
+
   return (
-    <div className="m-2">
+    <div className="flex flex-col items-center m-2">
+      <h1 className="text-blue-700 font-semibold">Challenge 3</h1>
       <form>
         <p>
           <input
@@ -50,7 +59,7 @@ const ChallengeThree = () => {
             type="text"
             name="search"
             placeholder="Search..."
-            onChange={(e) => handleSearchChange(e.target.value)}
+            onChange={(e) => {setIsDebounced(true), debouncedChangeHandler(e.target.value)}}
           />
         </p>
       </form>
